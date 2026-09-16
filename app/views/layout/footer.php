@@ -1,6 +1,6 @@
     </div>
     <footer class="text-center py-3 mt-4 text-secondary border-top">
-      <p class="mb-0 small">&copy; <?= date('Y') ?> Aplikasi Pengelolaan Warung &bull; InApp Template</p>
+      <p class="mb-0 small">&copy; <?= date('Y') ?> Aplikasi Pengelolaan Warung</p>
     </footer>
   </main>
 
