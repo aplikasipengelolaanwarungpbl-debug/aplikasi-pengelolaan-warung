@@ -1,224 +1,126 @@
-# 🎨 Figma Design System & Style Guide
-**Aplikasi Pengelolaan Warung (WarungApp)**
-> Dokumen panduan desain lengkap dan komprehensif untuk perancangan antarmuka di **Figma**, diselaraskan 100% secara detail dan presisi dengan kode implementasi CSS (`style.css`), komponen layout, dan identitas visual aplikasi.
+# 🎨 Panduan Desain Antarmuka (Figma Design System)
+**Aplikasi Pengelolaan Warung**
+
+> **Tentang Dokumen Ini:**  
+> Dokumen ini adalah panduan praktis dan mudah dipahami untuk siapa saja yang ingin membuat atau melihat desain aplikasi di Figma. Disusun dengan bahasa sehari-hari tanpa istilah teknis yang membingungkan, agar tampilan di Figma dan hasil aplikasi di web benar-benar sama persis.
 
 ---
 
-## 🌟 1. Identitas Visual & Warna Oranye Khas (Brand Orange)
+## 🖥️ 1. Ukuran Layar Desktop (Ukuran Frame Figma)
 
-Aplikasi Pengelolaan Warung menggunakan tema visual modern bernuansa **Warm Orange (Oranye Hangat / Terracotta)** sebagai warna identitas utama (*Primary Brand*). Warna oranye ini mencerminkan kehangatan, keramahan, dan dinamisme operasional warung/toko kelontong.
+Untuk mendesain halaman web aplikasi ini di Figma, gunakan ukuran layar desktop standar berikut:
 
-### 🟧 Palet Utama Oranye (Primary Orange System)
+### 📐 Dimensi Utama Layar Desktop
+* **Ukuran Frame Figma:** **`1440 x 900 px`** *(Ukuran standar layar laptop/komputer)*
+* **Warna Latar Belakang Layar (Canvas):** `#F8F9FA` *(Abu-abu sangat muda/bersih)*
 
-| Token Figma | Nilai Hex | Nilai RGB | Opacity / Keterangan | Penggunaan Utama pada Aplikasi |
-| :--- | :--- | :--- | :--- | :--- |
-| `Primary/50 (Ultra Light)` | `#FDF4F0` | `253, 244, 240` | `100%` Solid | Background container lembut, highlight card khusus |
-| `Primary/100 (Subtle Nav)` | `#FDECE6` | `253, 236, 230` | Equivalent `9.5%` (`rgba(230, 98, 57, 0.095)`) | **Background aktif & hover menu sidebar**, hover submenu |
-| `Primary/200 (Light Tint)` | `#FBD6C9` | `251, 214, 201` | Equivalent `12%` (`rgba(230, 98, 57, 0.12)`) | Badge `bg-primary-subtle`, border aksen oranye lembut |
-| `Primary/500 (Base Orange)` | **`#E66239`** | `230, 98, 57` | `100%` Solid | **Warna Utama Aplikasi**: Tombol `.btn-primary`, Icon Produk, Teks Aktif Sidebar, Vektor Logo, Avatar Primary |
-| `Primary/600 (Dark Hover)` | **`#CF512A`** | `207, 81, 42` | `100%` Solid | Status **Hover & Active** tombol utama (`.btn-primary:hover`), link hover, text emphasis |
-| `Primary/700 (Deep Orange)` | `#B2401D` | `178, 64, 29` | `100%` Solid | Teks oranye dengan kontras tinggi di atas latar terang |
-
----
-
-## 🎨 2. Palet Warna Lengkap (Complete Color Palette)
-
-### A. Semantic & Status (Indikator & Notifikasi)
-| Status | Solid (Hex) | RGB | Subtle BG (Pill/Badge) | Border / Text Accent | Keterangan Penggunaan |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Success** | `#00C951` | `0, 201, 81` | `#E6F9EE` (`10%`) | `#00C951` | Stok Aman (> 5 pcs), Indikator Online Avatar |
-| **Warning (Amber Orange)** | `#F0B100` | `240, 177, 0` | `#FEF7E6` (`12%`) | `#F0B100` / `#946C00` | Stok Kritis (1–5 pcs), Indikator Away Avatar |
-| **Danger** | `#FB2C36` | `251, 44, 54` | `#FFEAEB` (`10%`) | `#FB2C36` | Stok Habis (0), Tombol Hapus, Indikator Sibuk/Busy |
-| **Info** | `#00B8DB` | `0, 184, 219` | `#E6F8FB` (`12%`) | `#00B8DB` | Keterangan info, status indikator info avatar |
-
-### B. Neutral & Grayscale (Struktur Antarmuka)
-| Token Figma | Hex Code | Deskripsi & Penggunaan di Web |
-| :--- | :--- | :--- |
-| `Neutral/Dark` | `#171717` | Judul tebal utama, logo text, header level 1-2 |
-| `Neutral/Body` | `#262626` | Warna teks konten standar (`--bs-body-color`) |
-| `Neutral/Nav` | `#404040` | Teks navigasi default sidebar (idle) & link umum |
-| `Neutral/Secondary` | `#525252` | Sub-label, nomor urut tabel, icon secondary, avatar secondary |
-| `Neutral/Muted` | `#737373` | Header kolom tabel (`th`), caption, info helper |
-| `Neutral/Placeholder` | `#A3A3A3` | Placeholder input form, status offline avatar |
-| `Neutral/Border` | `#E5E5E5` | Garis pemisah card, border sidebar, border tabel, input outline |
-| `Neutral/Translucent` | `rgba(0, 0, 0, 0.08)` | Garis pemisah subtle |
-| `Neutral/Light Surface`| `#F5F5F5` | Background thead tabel, addon input (`Rp`), icon box background |
-| `Neutral/Canvas BG` | `#F8F9FA` | Background kanvas seluruh halaman aplikasi (`body`) |
-| `Neutral/White` | `#FFFFFF` | Background Card, Navbar Topbar, Sidebar container |
-
----
-
-## 🔤 3. Tipografi (Typography System)
-
-* **Font Family**: [`Poppins`](https://fonts.google.com/specimen/Poppins) (Google Fonts)
-* **Fallback**: `sans-serif`
-* **Base Size**: `14px` (`0.875rem`)
-* **Line Height Standar**: `1.5`
-
-### 📌 Skala Tipografi untuk Frame Figma
-
-| Style Name | Font Size (px) | Weight | Line Height | Letter Spacing | Penggunaan |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Heading 1** | `32px` | **700 (Bold)** | `40px` (`1.25`) | normal | Header besar dashboard |
-| **Heading 2** | `28px` | **700 (Bold)** | `36px` (`1.3`) | normal | Judul section utama |
-| **Heading 3** | `24px` | **700 (Bold)** | `31px` (`1.3`) | normal | Judul halaman (*Daftar Produk Warung*) |
-| **Heading 4** | `20px` | **600 (SemiBold)** | `28px` (`1.4`) | normal | Subjudul halaman / Card title besar |
-| **Heading 5** | `16px` | **600 (SemiBold)** | `22px` (`1.4`) | normal | Judul kartu (*Stok Produk*, *Informasi*) |
-| **Heading 6** | `14px` | **600 (SemiBold)** | `20px` (`1.4`) | normal | Nama produk pada tabel |
-| **Body (Default)** | `14px` | **400 (Regular)** | `21px` (`1.5`) | normal | Teks umum, form input, isi tabel |
-| **Body Medium** | `14px` | **500 (Medium)** | `21px` (`1.5`) | normal | Label form, navigasi aktif, harga produk |
-| **Body Small** | `13px` | **400 (Regular)** | `19.5px` (`1.5`) | normal | Menu link pada sub-kategori sidebar |
-| **Caption / Small**| `12px` | **400 (Regular)** | `17px` (`1.4`) | normal | ID produk (`#1`), breadcrumbs, helper form |
-| **Table Header** | `12px` | **400 (Regular)** | `17px` (`1.4`) | `+0.5px` (UPPERCASE) | Header kolom tabel (`NO`, `NAMA PRODUK`, `HARGA`, `STOK`, `AKSI`) |
-| **Badge Label** | `12px` | **500 (Medium)** | `14px` (`1.2`) | normal | Status stok produk |
-
----
-
-## 📐 4. Spasi, Grid & Dimensi Layout (Layout & Spacing)
-
-### A. Dimensi Master Layout (Desktop Frame: 1440 x 900 px)
+### 🧱 Pembagian Tata Letak (Layout)
+Layar desktop terbagi menjadi **3 area utama**:
 
 ```
-+-------------------------------------------------------------------------+
-| [Sidebar: 240px] | [Topbar Navbar: Height 60px, Margin-Left: 240px]    |
-|                  +------------------------------------------------------+
-| [Logo Area: 60px]| [Main Content Canvas]                                |
-| [Menu Items]     | Padding: 24px (Top 75px dari viewport)               |
-|                  | Background: #F8F9FA                                  |
-+-------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------+
+| 🧭 MENU SAMPING (SIDEBAR) | 🔝 BAR ATAS (NAVBAR TOPBAR)                           |
+| Lebar: 240 px             | Tinggi: 60 px, Menempel di atas                       |
+| Tinggi: Penuh (100vh)     +-------------------------------------------------------+
+| Warna: Putih (#FFFFFF)    | 📄 KONTEN UTAMA (HALAMAN APLIKASI)                    |
+| Garis Pembatas Kanan: Abu | Lebar: Sisa ruang (1200 px)                           |
+|                           | Ruang Kosong Tepi (Padding): 24 px                    |
+|                           | Background: Abu-abu muda (#F8F9FA)                    |
++---------------------------+-------------------------------------------------------+
 ```
 
-| Komponen Layout | Dimensi (Lebar x Tinggi) | Ketentuan Khusus |
+| Bagian | Ukuran (Lebar x Tinggi) | Keterangan & Warna |
 | :--- | :--- | :--- |
-| **Sidebar (Expanded)** | Width: `240px`, Height: `100vh` | Fixed kiri, Background `#FFFFFF`, Border kanan `1px solid #E5E5E5` |
-| **Sidebar (Collapsed Mini)** | Width: `60px`, Height: `100vh` | Mode ringkas ketika tombol toggle ditekan |
-| **Topbar Header** | Height: `60px`, Width: `100%` (Offset `240px`) | Background `#FFFFFF`, Border bawah `1px solid #E5E5E5`, Padding `0 16px` |
-| **Main Content Canvas** | Margin-Left: `240px`, Padding Top: `75px` | Background `#F8F9FA`, Container Padding: `24px` |
-
-### B. Spacing Scale (Grid Base 4px / 8px)
-* `space-1` (`4px`): Padding vertikal badge stok
-* `space-2` (`8px`): Jarak elemen form label, gap item navigasi, icon gap
-* `space-3` (`12px`): Margin horizontal menu sidebar, gap dropdown
-* `space-4` (`16px`): Padding kartu header, padding cell horizontal tabel
-* `space-5` (`20px`): Gap antar card / grid kolom
-* `space-6` (`24px`): Padding body card (`p-4`), margin bottom header halaman
-* `space-7` (`40px`): Spacing section besar (`py-6`)
+| **Menu Samping (Sidebar Terbuka)** | Lebar `240 px`, Tinggi `Penuh` | Latar putih (`#FFFFFF`), garis tepi abu-abu di kanan |
+| **Menu Samping (Sidebar Ringkas/Mini)** | Lebar `60 px`, Tinggi `Penuh` | Saat menu disembunyikan / ditekan toggle |
+| **Bar Atas (Header/Navbar)** | Tinggi `60 px`, Lebar sisa layar | Latar putih (`#FFFFFF`), tempat profil & notifikasi |
+| **Area Konten Utama** | Lebar `1200 px`, Jarak dalam `24 px` | Tempat kartu data, tabel produk, dan grafik |
 
 ---
 
-## 🔲 5. Border Radius & Efek Bayangan (Corner & Shadow)
+## 🎨 2. Warna yang Digunakan (Color Palette)
 
-### Border Radius
-* **Badges / Small Tag**: `6px` (`rounded-1`)
-* **Buttons, Cards, Inputs, Sidebar Items**: `8px` (`rounded-2`)
-* **Avatar & Status Dots**: `50%` / `9999px` (`rounded-circle`)
+Aplikasi ini menggunakan warna utama **Oranye Khas Warung** yang hangat dan ramah, dipadukan dengan warna-warna penjelas status yang jelas.
 
-### Shadows di Figma
-* **Card & Container Default (`shadow-sm`)**:
-  * Drop Shadow: `X: 0`, `Y: 1`, `Blur: 3`, `Spread: 0`, Color: `#000000`, Opacity: `5%`
-* **Dropdown & Flyout Menu**:
-  * Drop Shadow: `X: 0`, `Y: 8`, `Blur: 24`, `Spread: 0`, Color: `#000000`, Opacity: `12%`
-* **Modal / Backdrop Overlay**:
-  * Background: `#000000`, Opacity: `45%`, Layer Blur: `1px`
+### 🟧 A. Warna Utama (Oranye Warung)
+Warna ini dipakai untuk elemen penting seperti tombol utama, menu yang sedang aktif, dan ikon sorotan.
+
+| Kode Warna | Contoh Tampilan | Kapan Dipakai? |
+| :--- | :--- | :--- |
+| **`#E66239`** *(Oranye Utama)* | Warna Oranye Terang | Tombol utama (**+ Tambah Produk**), ikon produk, menu yang sedang dibuka |
+| **`#CF512A`** *(Oranye Gelap)* | Warna Oranye Tua | Efek saat tombol diarahkan kursor mouse (*Hover / Klik*) |
+| **`#FDECE6`** *(Oranye Pudar)* | Latar Oranye Sangat Lembut | Latar belakang kotak menu yang sedang aktif di sidebar |
 
 ---
 
-## 🧩 6. Panduan Pembuatan Komponen UI di Figma (Component Specifications)
+### 🚦 B. Warna Indikator Status (Mudah Dipahami)
+Warna untuk memberikan informasi kondisi barang dengan cepat:
 
-### A. Tombol Oranye & Varian Tombol (Buttons)
-
-#### 1. Primary Orange Button (`.btn-primary`) — *Signature Action*
-* **Tinggi Frame**: `38px` (Standard) / `42px` (Large)
-* **Auto Layout**: Horizontal, Padding `8px 16px` (atau `8px 24px`), Gap `6px`
-* **Corner Radius**: `8px`
-* **Warna Default**: Fill `#E66239`, Text/Icon `#FFFFFF` (Poppins 14px Medium)
-* **Warna Hover/Pressed**: Fill `#CF512A`, Text/Icon `#FFFFFF`
-* **Shadow**: `0 1px 2px rgba(0,0,0,0.05)`
-
-#### 2. Outline Primary Button (`.btn-outline-primary`)
-* **Auto Layout**: Horizontal, Padding `8px 16px`, Corner Radius `8px`
-* **Border**: `1px solid #E66239`, Fill: `Transparent`
-* **Text/Icon**: `#E66239` (Hover: Fill `#E66239`, Text `#FFFFFF`)
-
-#### 3. Icon Action Button (`.btn-icon`)
-* **Small (`btn-sm`) untuk Aksi Tabel**:
-  * Frame: `35px x 35px`, Corner Radius `6px`
-  * Edit: Border `1px solid #525252`, Icon `#525252` (`14px`)
-  * Hapus: Border `1px solid #FB2C36`, Icon `#FB2C36` (`14px`)
+* 🟢 **Hijau (`#00C951`) — Stok Aman:** Digunakan jika jumlah stok lebih dari 5 pcs. Latar lembut: `#E6F9EE`.
+* 🟡 **Kuning/Kuning-Kuningan (`#F0B100`) — Stok Kritis:** Digunakan jika stok menipis (1–5 pcs). Latar lembut: `#FEF7E6`.
+* 🔴 **Merah (`#FB2C36`) — Stok Habis / Bahaya:** Digunakan jika stok 0 atau untuk tombol **Hapus**. Latar lembut: `#FFEAEB`.
+* 🔵 **Biru (`#00B8DB`) — Info / Keterangan:** Digunakan untuk label bantuan atau informasi umum.
 
 ---
 
-### B. Sidebar Navigasi dengan Aksen Oranye (`.sidebar`)
-
-* **Ukuran Item (`.nav-link`)**: Width `216px` (Width Sidebar `240px` - Margin `24px`), Height `40px`
-* **Auto Layout**: Horizontal, Padding `8px 10px`, Gap `12px`, Corner Radius `8px`
-* **Variasi Status**:
-  * **Default / Idle**: Fill `Transparent`, Text `#404040`, Icon `#404040` (18px)
-  * **Hover State**: Fill `#FDECE6` (`rgba(230, 98, 57, 0.095)`), Text `#E66239`, Icon `#E66239`
-  * **Active State**: Fill `#FDECE6` (`rgba(230, 98, 57, 0.095)`), Text `#E66239` (Font Weight 500), Icon `#E66239`
-* **Submenu Item**: Height `34px`, Padding `7px 14px 7px 26px`, Font `13px Poppins`
+### ⚪ B. Warna Netral & Latar Belakang
+* **Hitam Pekat (`#171717`):** Untuk judul utama halaman.
+* **Abu Gelap / Teks Biasa (`#262626`):** Untuk tulisan paragraf dan tabel.
+* **Abu Sedang (`#737373`):** Untuk judul kolom tabel dan teks bantuan.
+* **Garis Pembatas (`#E5E5E5`):** Garis pemisah tabel, kartu, dan kotak isian form.
+* **Putih Bersih (`#FFFFFF`):** Warna kartu/wadah konten dan menu samping.
 
 ---
 
-### C. Tabel Data & Icon Box Produk
+## 🔤 3. Gaya Tulisan & Ukuran Huruf (Typography)
 
-* **Card Container**: Fill `#FFFFFF`, Border `1px solid #E5E5E5`, Corner Radius `8px`, Shadow-sm
-* **Card Header**: Auto Layout Horizontal, Padding `16px`, Border Bottom `1px solid #E5E5E5`
-* **Header Tabel (`th`)**: Background `#F8F9FA`, Padding `14px 16px`, Teks `#737373` (12px Uppercase)
-* **Baris Data (`td`)**: Padding `14px 16px`, Border Bottom `1px solid #E5E5E5`
-* **Product Icon Box**:
-  * Frame: `40px x 40px`, Corner Radius `6px`
-  * Fill: `#F5F5F5` (Light Grey)
-  * Icon: Tabler `ti-package`, **Warna Oranye `#E66239`**, Size `20px`
+* **Jenis Huruf (Font):** Menggunakan Google Font gratis **`Poppins`** (alternatif: *sans-serif* / font sistem standar).
 
----
-
-### D. Badges Status Stok Produk (`.badge-stock`)
-
-* **Auto Layout**: Horizontal, Padding `4px 8px`, Corner Radius `6px`, Font `12px Poppins Medium`
-* **3 Varian Status**:
-  1. **Stok Aman (`> 5 pcs`)**:
-     * Background: `#E6F9EE` (`rgba(0, 201, 81, 0.12)`)
-     * Border: `1px solid rgba(0, 201, 81, 0.25)`
-     * Text: `#00C951` (cth: `15 pcs`)
-  2. **Stok Kritis (`1 - 5 pcs`)**:
-     * Background: `#FEF7E6` (`rgba(240, 177, 0, 0.12)`)
-     * Border: `1px solid rgba(240, 177, 0, 0.3)`
-     * Text: `#B88700` (cth: `3 (Kritis)`)
-  3. **Stok Habis (`0 pcs`)**:
-     * Background: `#FFEAEB` (`rgba(251, 44, 54, 0.12)`)
-     * Border: `1px solid rgba(251, 44, 54, 0.25)`
-     * Text: `#FB2C36` (cth: `Habis (0)`)
+### 📏 Panduan Ukuran Tulisan:
+1. **Judul Halaman Besar:** `24 px` — Tebal (Bold)  
+   *Contoh: "Daftar Produk Warung", "Dasbor Utama"*
+2. **Judul Kartu / Sub-Judul:** `16 px` — Agak Tebal (SemiBold)  
+   *Contoh: "Daftar Transaksi Hari Ini"*
+3. **Teks Utama / Isi Tabel:** `14 px` — Biasa (Regular)  
+   *Contoh: "Minyak Goreng 1L", "Rp 15.000"*
+4. **Label Status & Catatan Kecil:** `12 px` — Agak Tebal / Sedang  
+   *Contoh: Label stok ("Tersedia"), tulisan header kolom ("NO", "NAMA PRODUK")*
 
 ---
 
-### E. Form Input Fields (`.form-control`, `.input-group`)
+## 🔘 4. Bentuk Sudut & Efek Bayangan
 
-* **Input Box**: Height `38px` - `40px`, Corner Radius `6px`, Border `1px solid #E5E5E5`, Fill `#FFFFFF`
-* **Teks Input**: `14px Poppins Regular`, Color `#262626` (Placeholder: `#A3A3A3`)
-* **Focus State**: Border `#E66239`, Ring Box Shadow `0 0 0 3px rgba(230, 98, 57, 0.2)`
-* **Input Prepend / Append (Icon / `Rp`)**: Fill `#F5F5F5`, Text `#737373`, Border `1px solid #E5E5E5`
-
----
-
-## 🔣 7. Ikonografi (Iconography)
-
-* **Icon Family**: [Tabler Icons](https://tabler.io/icons)
-* **Stroke**: `2px` (Regular)
-* **Ikon Kunci**:
-  * **Navigasi Utama**: `ti-layout-dashboard` (Dasbor), `ti-shopping-cart` (Transaksi), `ti-building-warehouse` (Inventaris), `ti-report-analytics` (Laporan)
-  * **Sub-Menu**: `ti-receipt` (Pencatatan), `ti-history` (Riwayat), `ti-box` (List Produk), `ti-category` (Kategori)
-  * **Aksi & Tombol**: `ti-plus` (Tambah), `ti-edit` (Ubah), `ti-trash` (Hapus), `ti-chevron-right` (Panah Menu), `ti-layout-sidebar-left-expand` (Toggle Sidebar)
-  * **Produk Icon**: `ti-package` (**Oranye `#E66239`**)
+* **Lengkungan Sudut (Corner Radius):**
+  * Tombol, Kotak Isian (Form), dan Kartu Konten: Sudut melengkung halus sebesar **`8 px`**.
+  * Label/Pill Status: Sudut melengkung kecil sebesar **`6 px`**.
+  * Foto Profil (Avatar): Bulat penuh (**`50%`**).
+* **Bayangan Halus (Shadow):**
+  * Kartu konten menggunakan bayangan sangat tipis agar terlihat timbul rapi dari latar belakang (*Drop Shadow: Y=1, Blur=3, Warna Hitam Transparan 5%*).
 
 ---
 
-## 💡 8. Checklist Pembuatan Asset di Figma
+## 🧩 5. Contoh Komponen Utama
 
-1. **Color Styles**: Daftarkan token `Primary/Orange/500 (#E66239)`, `Primary/Orange/600 (#CF512A)`, `Primary/Subtle (#FDECE6)`, status semantic (`Success`, `Warning`, `Danger`), dan neutral scale.
-2. **Typography Styles**: Buat text styles `H1` sampai `H6`, `Body Regular`, `Body Medium`, `Table Header`, dan `Badge`.
-3. **Components & Variants**:
-   * Buat master component `Button/Primary` dengan property `State: Default | Hover | Active`.
-   * Buat master component `Sidebar/Item` dengan property `Active: True | False` (aktif dengan aksen oranye).
-   * Buat master component `Badge/Stock` dengan varian `In Stock | Critical | Out of Stock`.
-   * Buat master component `Table/Row` lengkap dengan icon box oranye.
+### 1. Tombol (Button)
+* **Tombol Utama (Oranye):** Tinggi `38 px`, sudut melengkung `8 px`, warna oranye `#E66239`, tulisan putih.
+* **Tombol Hapus (Merah):** Kotak ukuran `35 x 35 px`, border garis merah, ikon tempat sampah merah.
+
+### 2. Label Stok Barang (Status Badge)
+* Kotak kecil dengan sudut melengkung `6 px` dan teks tebal `12 px`:
+  * `🟢 15 pcs` (Latar hijau muda, teks hijau)
+  * `🟡 3 pcs (Kritis)` (Latar kuning muda, teks kuning tua)
+  * `🔴 Habis (0)` (Latar merah muda, teks merah)
+
+### 3. Kotak Isian (Form Input)
+* Tinggi `38 px` - `40 px`, warna latar putih, garis tepi abu-abu `1 px`.
+* Saat diklik/diisi: Garis tepi berubah menjadi oranye `#E66239`.
+
+---
+
+## 🚀 6. Cara Praktis Memulai di Figma
+
+1. Buat **Frame Baru** dengan ukuran **`1440 x 900 px`** dan beri warna latar `#F8F9FA`.
+2. Tarik kotak **Sidebar** di sisi kiri dengan lebar `240 px` warna putih `#FFFFFF`.
+3. Pasang **Navbar** di bagian atas kanan dengan tinggi `60 px` warna putih.
+4. Isi area tengah dengan **Kartu Putih** berjarak `24 px` untuk menaruh tabel, tombol, atau diagram data.
+5. Gunakan font **Poppins** dan warna **Oranye (`#E66239`)** untuk tombol dan menu yang aktif.

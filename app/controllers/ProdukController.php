@@ -20,16 +20,7 @@ class ProdukController
         require __DIR__ . '/../views/produk/index.php';
     }
 
-    public function dashboard()
-    {
-        $data = $this->produkModel->getAll();
-        require __DIR__ . '/../views/dasbor/index.php';
-    }
-
-    public function dasbor()
-    {
-        $this->dashboard();
-    }
+    
 
     public function create()
     {
