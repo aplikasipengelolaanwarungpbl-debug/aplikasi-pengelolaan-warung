@@ -12,7 +12,7 @@ class Produk
     // GET ALL
     public function getAll()
     {
-        $query = "SELECT * FROM " . $this->table . "ORDER BY id DESC";
+        $query = "SELECT * FROM " . $this->table . " ORDER BY id DESC";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -20,7 +20,7 @@ class Produk
 
     public function getById($id)
     {
-        $query = "SELECT * FROM" . $this->table . " WHERE id =  :id";
+        $query = "SELECT * FROM " . $this->table . " WHERE id = :id";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":id", $id);
         $stmt->execute();
@@ -29,7 +29,7 @@ class Produk
 
     public function create($nama, $harga, $stok)
     {
-        $query = "INSERT INTO" . $this->table . "(nama_produk,  harga, stok) VALUES (:nama, :harga, :stok)";
+        $query = "INSERT INTO " . $this->table . " (nama_produk, harga, stok) VALUES (:nama, :harga, :stok)";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":nama", $nama);
         $stmt->bindParam(":harga", $harga);
@@ -39,7 +39,7 @@ class Produk
 
     public function update($id, $nama, $harga, $stok)
     {
-        $query = "UPDATE" . $this->table . "SET nama_produk = :nama, harga = :harga, stok = :stok WHERE id = :id";
+        $query = "UPDATE " . $this->table . " SET nama_produk = :nama, harga = :harga, stok = :stok WHERE id = :id";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":id", $id);
         $stmt->bindParam(":nama", $nama);
@@ -50,7 +50,7 @@ class Produk
 
     public function delete($id)
     {
-        $query = "DELETE" . $this->table . "WHERE id = :id";
+        $query = "DELETE FROM " . $this->table . " WHERE id = :id";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":id", $id);
         return $stmt->execute();
