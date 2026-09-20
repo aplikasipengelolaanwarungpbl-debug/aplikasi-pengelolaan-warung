@@ -5,12 +5,16 @@ require_once __DIR__ . '/../controllers/PencatatanTransaksiController.php';
 
 $produkController = new ProdukController();
 $dashboardController = new DashboardController();
-$pencatatanTransaksiController = new PencatatanTransaksi();
+$pencatatanTransaksiController = new PencatatanTransaksiController();
 
-// Ambil action dari URL, default ke 'index' kalau kosong
+// Ambil action dari URL, default ke 'dashboard' kalau kosong
 $action = $_GET['action'] ?? 'dashboard';
 
-// Cek apakah method ini benar-benar ada di controller
+// Hindari memanggil method sembarangan seperti __construct
+if (str_starts_with($action, '__')) {
+    die("404 - Halaman tidak ditemukan");
+}
+
 if (method_exists($produkController, $action)) {
     $produkController->$action();
 } elseif (method_exists($dashboardController, $action)) {

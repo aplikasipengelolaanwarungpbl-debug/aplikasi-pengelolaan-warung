@@ -3,7 +3,7 @@ require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../models/Produk.php';
 
 
-class PencatatanTransaksi
+class PencatatanTransaksiController
 {
     private $db;
     private $produkModel;
