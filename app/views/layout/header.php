@@ -1,10 +1,11 @@
 <?php
-$currentAction = $_GET['action'] ?? 'index';
+$currentAction = $_GET['action'] ?? 'dashboard';
 $isInventaris = in_array($currentAction, ['index', 'create', 'edit', 'kategori']);
 $isTransaksi = in_array($currentAction, ['transaksi_create', 'transaksi_riwayat']);
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@ $isTransaksi = in_array($currentAction, ['transaksi_create', 'transaksi_riwayat'
   <!-- InApp Custom Style -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
   <div id="overlay" class="overlay"></div>
 
@@ -24,12 +26,12 @@ $isTransaksi = in_array($currentAction, ['transaksi_create', 'transaksi_riwayat'
   <aside id="sidebar" class="sidebar">
     <div class="logo-area">
       <img src="assets/images/logo-icon.svg" alt="Logo" width="30" height="30">
-      <span class="logo-text fw-bold fs-5 text-dark">WarungApp</span>
+      <span class="logo-text fw-bold fs-5 text-dark">WarungKu</span>
     </div>
     <ul class="list-unstyled mb-0 mt-3">
       <!-- Dasbor -->
       <li>
-        <a href="index.php?action=dashboard" class="nav-link <?= in_array($currentAction, ['dashboard', 'dasbor']) ? 'active' : '' ?>" title="Dasbor">
+        <a href="index.php?action=dasbor" class="nav-link <?= in_array($currentAction, ['dashboard', 'dasbor']) ? 'active' : '' ?>" title="Dasbor">
           <i class="ti ti-layout-dashboard"></i>
           <span class="nav-text">Dasbor</span>
         </a>
@@ -45,7 +47,7 @@ $isTransaksi = in_array($currentAction, ['transaksi_create', 'transaksi_riwayat'
         <div class="collapse <?= $isTransaksi ? 'show' : '' ?> sidebar-collapse" id="menuTransaksi">
           <ul class="sidebar-submenu">
             <li>
-              <a href="index.php?action=transaksi_create" class="nav-link <?= $currentAction === 'transaksi_create' ? 'active' : '' ?>">
+              <a href="index.php?action=pencatatan_transaksi" class="nav-link <?= $currentAction === 'transaksi_create' ? 'active' : '' ?>">
                 <i class="ti ti-receipt"></i>
                 <span class="nav-text">Pencatatan Transaksi</span>
               </a>
@@ -70,7 +72,7 @@ $isTransaksi = in_array($currentAction, ['transaksi_create', 'transaksi_riwayat'
         <div class="collapse <?= $isInventaris ? 'show' : '' ?> sidebar-collapse" id="menuInventaris">
           <ul class="sidebar-submenu">
             <li>
-              <a href="index.php?action=index" class="nav-link <?= in_array($currentAction, ['index', 'create', 'edit']) ? 'active' : '' ?>">
+              <a href="index.php?action=list_produk" class="nav-link <?= in_array($currentAction, ['list_produk', 'create', 'edit']) ? 'active' : '' ?>">
                 <i class="ti ti-box"></i>
                 <span class="nav-text">List Produk</span>
               </a>

@@ -30,9 +30,10 @@ require __DIR__ . '/../layout/header.php';
     <table class="table table-hover align-middle mb-0">
       <thead class="table-light">
         <tr>
-          <th scope="col" class="ps-4" style="width: 60px;">No</th>
+          <th scope="col" class="ps-4" style="width: 60px;">ID</th>
           <th scope="col">Nama Produk</th>
-          <th scope="col">Harga</th>
+          <th scope="col">Harga Jual</th>
+          <th scope="col">Harga Beli</th>
           <th scope="col">Stok</th>
           <th scope="col" class="text-end pe-4" style="width: 140px;">Aksi</th>
         </tr>

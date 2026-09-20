@@ -14,13 +14,11 @@ class ProdukController
         $this->produkModel = new Produk($this->db);
     }
 
-    public function index()
+    public function list_produk()
     {
         $data = $this->produkModel->getAll();
         require __DIR__ . '/../views/produk/index.php';
     }
-
-    
 
     public function create()
     {
