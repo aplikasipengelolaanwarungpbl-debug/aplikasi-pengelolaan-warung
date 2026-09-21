@@ -53,7 +53,7 @@ $isTransaksi = in_array($currentAction, ['transaksi_create', 'transaksi_riwayat'
               </a>
             </li>
             <li>
-              <a href="index.php?action=transaksi_riwayat" class="nav-link <?= $currentAction === 'transaksi_riwayat' ? 'active' : '' ?>">
+              <a href="index.php?action=riwayatTransaksi" class="nav-link <?= $currentAction === 'riwayatTransaksi' ? 'active' : '' ?>">
                 <i class="ti ti-history"></i>
                 <span class="nav-text">Riwayat Transaksi</span>
               </a>
